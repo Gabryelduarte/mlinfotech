@@ -68,22 +68,31 @@ export default function Quiz() {
     let title = "";
     let description = "";
     let color = "";
+    let className = "quiz-green";
     
     if (score <= 8) {
       title = "Maturidade TI Crítica";
       description = "Sua TI apresenta riscos operacionais graves. A ausência de redundâncias e backups confiáveis, combinada com vulnerabilidades de segurança, pode gerar grandes perdas financeiras por lentidão, invasões ou perda de dados. Recomendamos uma auditoria de diagnóstico urgente.";
       color = "#ef4444"; // red
+      className = "quiz-red";
     } else if (score <= 12) {
       title = "Maturidade TI Intermediária";
       description = "Sua empresa já possui boas práticas de tecnologia, mas ainda carece de automação (CI/CD), políticas de conformidade avançadas de segurança e monitoramento ativo 24/7. Pequenos ajustes de arquitetura de nuvem e automações podem economizar tempo e blindar seus sistemas.";
       color = "#eab308"; // yellow
+      className = "quiz-yellow";
     } else {
       title = "Maturidade TI Avançada";
       description = "Parabéns! Sua infraestrutura de tecnologia está bem madura. Seus processos contam com segurança ativa, nuvem estruturada e alguma automação. O foco agora deve ser na otimização fina de custos de infraestrutura e inovação contínua de software.";
       color = "#10b981"; // green
+      className = "quiz-green";
     }
 
-    return { score, title, description, color };
+    return { score, title, description, color, className };
+  };
+
+  const getProgressClass = () => {
+    const percent = currentStep > 0 && currentStep <= questions.length ? Math.round((currentStep / questions.length) * 100) : 0;
+    return `progress-${percent}`;
   };
 
   const handleShareWhatsApp = (result) => {
@@ -118,7 +127,7 @@ export default function Quiz() {
           ${currentStep > 0 && currentStep <= questions.length && html`
             <div className="quiz-question-container">
               <div className="quiz-progress-bar">
-                <div className="quiz-progress-fill" style=${{ '--progress-width': `${(currentStep / questions.length) * 100}%` }}></div>
+                <div className={`quiz-progress-fill ${getProgressClass()}`}></div>
               </div>
               <span className="quiz-step-indicator">Pergunta ${currentStep} de ${questions.length}</span>
               <h3 className="quiz-question-title">${questions[currentStep - 1].question}</h3>
@@ -140,10 +149,10 @@ export default function Quiz() {
               <div className="quiz-result-container">
                 <div className="quiz-result-header">
                   <h3>Seu Resultado:</h3>
-                  <div className="quiz-score-badge" style=${{ '--quiz-color': result.color }}>
+                  <div className={`quiz-score-badge ${result.className}`}>
                     <span>${result.score}</span> / 15
                   </div>
-                  <h4 className="quiz-result-title">${result.title}</h4>
+                  <h4 className={`quiz-result-title ${result.className}`}>${result.title}</h4>
                 </div>
                 
                 <p className="quiz-result-desc">${result.description}</p>
