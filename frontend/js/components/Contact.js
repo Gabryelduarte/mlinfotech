@@ -56,7 +56,7 @@ export default function Contact() {
                 </div>
                 <div className="contact-detail-content">
                   <h4>Telefone / WhatsApp</h4>
-                  <a href="https://wa.me/5531996140045" target="_blank" rel="noopener noreferrer" style=${{ color: 'var(--primary)' }}>
+                  <a href="https://wa.me/5531996140045" target="_blank" rel="noopener noreferrer" className="contact-link-primary">
                     +55 (31) 99614-0045
                   </a>
                 </div>
@@ -95,7 +95,7 @@ export default function Contact() {
 
           <!-- Formulário -->
           <div className="contact-form-container">
-            <h3 style=${{ marginBottom: '24px', fontSize: '1.25rem' }}>Enviar Mensagem rápida</h3>
+            <h3 className="contact-form-title">Enviar Mensagem rápida</h3>
             <form onSubmit=${handleSubmit}>
               <div className="form-group">
                 <label className="form-label" htmlFor="name">Seu Nome *</label>
@@ -115,8 +115,7 @@ export default function Contact() {
                 <select 
                   id="subject" 
                   name="subject" 
-                  className="form-input" 
-                  style=${{ background: 'var(--bg-surface-hover)' }}
+                  className="form-input contact-select" 
                   value=${formData.subject} 
                   onChange=${handleChange}
                   required 
@@ -145,10 +144,9 @@ export default function Contact() {
 
               <button 
                 type="submit" 
-                className="btn btn-primary" 
-                style=${{ width: '100%', gap: '8px' }}
+                className="btn btn-primary contact-submit-btn" 
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style=${{ verticalAlign: 'middle' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="icon-inline">
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                 </svg>
                 Conversar pelo WhatsApp

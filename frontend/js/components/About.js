@@ -9,7 +9,7 @@ export default function About() {
   ];
 
   return html`
-    <section id="about" className="section" style=${{ background: 'rgba(255, 255, 255, 0.01)' }}>
+    <section id="about" className="section about-section">
       <div className="container">
         <div className="about-grid">
           <div className="about-content">
@@ -17,15 +17,15 @@ export default function About() {
             <p className="about-text">
               Nascemos com a missão de descomplicar a infraestrutura de tecnologia para pequenas e médias empresas. Acreditamos que a TI deve ser um acelerador de produtividade, agindo nos bastidores para que você foque apenas no crescimento do seu negócio.
             </p>
-            <p className="about-text" style=${{ marginBottom: '40px' }}>
+            <p className="about-text about-text-large">
               Baseados em Mateus Leme - MG e oferecendo atendimento remoto para todo o Brasil, entregamos soluções eficientes em suporte de hardware, criação de sites, desenvolvimento de aplicativos e consultoria estratégica em TI.
             </p>
             
             <div className="stats-grid">
               ${commitments.map((item, index) => html`
-                <div key=${index} className="stat-item" style=${{ textAlign: 'left', padding: '20px' }}>
-                  <span className="stat-number" style=${{ fontSize: '1.25rem', marginBottom: '4px' }}>${item.title}</span>
-                  <span className="stat-label" style=${{ textTransform: 'none', letterSpacing: '0', fontSize: '0.85rem' }}>${item.desc}</span>
+                <div key=${index} className="stat-item">
+                  <span className="stat-number">${item.title}</span>
+                  <span className="stat-label">${item.desc}</span>
                 </div>
               `)}
             </div>

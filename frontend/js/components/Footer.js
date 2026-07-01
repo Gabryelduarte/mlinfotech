@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-col footer-logo-desc">
             <a href="#home" className="logo">
-              <img src="logo.png" alt="ML InfoTech Logo" className="logo-img" style=${{ height: '50px', width: 'auto' }} />
+              <img src="frontend/assets/logo.png" alt="ML InfoTech Logo" className="logo-img footer-logo-img" />
             </a>
             <p>
               Oferecemos manutenção especializada em computadores, criação de sites e aplicativos modernos, e consultoria estratégica em TI para impulsionar o seu negócio.

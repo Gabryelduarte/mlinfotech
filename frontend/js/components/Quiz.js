@@ -93,7 +93,7 @@ export default function Quiz() {
   };
 
   return html`
-    <section id="quiz" className="section" style=${{ background: 'rgba(59, 130, 246, 0.02)' }}>
+    <section id="quiz" className="section quiz-section">
       <div className="container">
         <div className="section-header">
           <h2>Diagnóstico de TI</h2>
@@ -118,7 +118,7 @@ export default function Quiz() {
           ${currentStep > 0 && currentStep <= questions.length && html`
             <div className="quiz-question-container">
               <div className="quiz-progress-bar">
-                <div className="quiz-progress-fill" style=${{ width: `${(currentStep / questions.length) * 100}%` }}></div>
+                <div className="quiz-progress-fill" style=${{ '--progress-width': `${(currentStep / questions.length) * 100}%` }}></div>
               </div>
               <span className="quiz-step-indicator">Pergunta ${currentStep} de ${questions.length}</span>
               <h3 className="quiz-question-title">${questions[currentStep - 1].question}</h3>
@@ -140,17 +140,17 @@ export default function Quiz() {
               <div className="quiz-result-container">
                 <div className="quiz-result-header">
                   <h3>Seu Resultado:</h3>
-                  <div className="quiz-score-badge" style=${{ borderColor: result.color, color: result.color }}>
+                  <div className="quiz-score-badge" style=${{ '--quiz-color': result.color }}>
                     <span>${result.score}</span> / 15
                   </div>
-                  <h4 className="quiz-result-title" style=${{ color: result.color }}>${result.title}</h4>
+                  <h4 className="quiz-result-title">${result.title}</h4>
                 </div>
                 
                 <p className="quiz-result-desc">${result.description}</p>
                 
                 <div className="quiz-result-actions">
                   <button className="btn btn-primary" onClick=${() => handleShareWhatsApp(result)}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style=${{ marginRight: '8px', verticalAlign: 'middle' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="icon-inline">
                       <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                     </svg>
                     Falar com Especialista no WhatsApp

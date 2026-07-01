@@ -29,7 +29,7 @@ export default function Header() {
     <header className=${`header ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="container nav-container">
         <a href="#home" className="logo" onClick=${closeMenu}>
-          <img src="logo.png" alt="ML InfoTech Logo" className="logo-img" />
+          <img src="frontend/assets/logo.png" alt="ML InfoTech Logo" className="logo-img" />
         </a>
 
         <button className="nav-toggle" onClick=${toggleMobileMenu} aria-label="Alternar Menu">
@@ -42,7 +42,7 @@ export default function Header() {
           <li><a href="#about" className="nav-link" onClick=${closeMenu}>Sobre</a></li>
           <li><a href="#contact" className="nav-link" onClick=${closeMenu}>Contato</a></li>
           <li>
-            <a href="https://wa.me/5531996140045" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style=${{ padding: '8px 20px', fontSize: '0.9rem' }} onClick=${closeMenu}>
+            <a href="https://wa.me/5531996140045" target="_blank" rel="noopener noreferrer" className="btn btn-primary consult-link" onClick=${closeMenu}>
               Falar com Consultor
             </a>
           </li>

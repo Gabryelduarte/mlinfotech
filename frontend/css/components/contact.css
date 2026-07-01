@@ -1,0 +1,23 @@
+.contact-link-primary {
+  color: var(--primary);
+}
+
+.contact-form-title {
+  margin-bottom: 24px;
+  font-size: 1.25rem;
+}
+
+.contact-select {
+  background: var(--bg-surface-hover);
+}
+
+.contact-submit-btn {
+  width: 100%;
+  gap: 8px;
+}
+
+.icon-inline {
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle;
+}

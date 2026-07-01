@@ -55,7 +55,7 @@ export default function Services() {
           <h2>Nossos Serviços</h2>
           <p>Soluções tecnológicas completas e eficientes para impulsionar a produtividade e a presença digital da sua empresa.</p>
         </div>
-        <div className="services-grid" style=${{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
+        <div className="services-grid">
           ${services.map((service, index) => html`
             <div key=${index} className="service-card">
               <div className="service-icon">

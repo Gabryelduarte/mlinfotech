@@ -55,7 +55,7 @@ export default function Cases() {
   ];
 
   return html`
-    <section id="cases" className="section" style=${{ background: 'rgba(255, 255, 255, 0.01)' }}>
+    <section id="cases" className="section cases-section">
       <div className="container">
         <div className="section-header">
           <h2>Cases de Sucesso</h2>

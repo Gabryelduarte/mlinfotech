@@ -150,6 +150,11 @@ a {
   font-size: 1rem;
 }
 
+.icon-inline {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 .btn-primary {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: #fff;
@@ -1039,6 +1044,7 @@ textarea.form-input {
 }
 
 .quiz-progress-fill {
+  width: var(--progress-width, 0);
   height: 100%;
   background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   transition: width 0.3s ease;

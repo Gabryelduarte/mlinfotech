@@ -1,0 +1,12 @@
+.quiz-section {
+  background: rgba(59, 130, 246, 0.02);
+}
+
+.quiz-score-badge {
+  border-color: var(--quiz-color, var(--primary));
+  color: var(--quiz-color, var(--primary));
+}
+
+.quiz-result-title {
+  color: var(--quiz-color, var(--primary));
+}
