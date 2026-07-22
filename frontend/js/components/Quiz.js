@@ -127,7 +127,7 @@ export default function Quiz() {
           ${currentStep > 0 && currentStep <= questions.length && html`
             <div className="quiz-question-container">
               <div className="quiz-progress-bar">
-                <div className={`quiz-progress-fill ${getProgressClass()}`}></div>
+                <div className="quiz-progress-fill" style=${{ width: ((currentStep / questions.length) * 100) + '%' }}></div>
               </div>
               <span className="quiz-step-indicator">Pergunta ${currentStep} de ${questions.length}</span>
               <h3 className="quiz-question-title">${questions[currentStep - 1].question}</h3>
@@ -149,10 +149,10 @@ export default function Quiz() {
               <div className="quiz-result-container">
                 <div className="quiz-result-header">
                   <h3>Seu Resultado:</h3>
-                  <div className={`quiz-score-badge ${result.className}`}>
+                  <div className=${ 'quiz-score-badge ' + result.className }>
                     <span>${result.score}</span> / 15
                   </div>
-                  <h4 className={`quiz-result-title ${result.className}`}>${result.title}</h4>
+                  <h4 className=${ 'quiz-result-title ' + result.className }>${result.title}</h4>
                 </div>
                 
                 <p className="quiz-result-desc">${result.description}</p>

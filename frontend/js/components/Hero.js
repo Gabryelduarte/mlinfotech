@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="hero-grid">
           <div className="hero-content">
             <div className="badge">
-              <span>Tecnologia de Próxima Geração</span>
+              <span>A Solução Completa em Informática e Tecnologia</span>
             </div>
             <h1 className="hero-title">
               Impulsionamos sua Empresa com <span className="gradient-text-accent">Soluções de TI</span> Inteligentes

@@ -26,28 +26,31 @@ export default function Header() {
   };
 
   return html`
-    <header className=${`header ${scrolled ? 'header-scrolled' : ''}`}>
-      <div className="container nav-container">
-        <a href="#home" className="logo" onClick=${closeMenu}>
-          <img src="frontend/assets/logo.png" alt="ML InfoTech Logo" className="logo-img" />
-        </a>
+    <div>
+      <div className=${ 'nav-overlay ' + (mobileMenuOpen ? 'open' : '') } onClick=${closeMenu}></div>
+      <header className=${ 'header ' + (scrolled ? 'header-scrolled' : '') }>
+        <div className="container nav-container">
+          <a href="#home" className="logo" onClick=${closeMenu}>
+            <img src="frontend/assets/logo.png" alt="ML InfoTech Logo" className="logo-img" />
+          </a>
 
-        <button className="nav-toggle" onClick=${toggleMobileMenu} aria-label="Alternar Menu">
-          ${mobileMenuOpen ? '✕' : '☰'}
-        </button>
+          <button className="nav-toggle" onClick=${toggleMobileMenu} aria-label="Alternar Menu">
+            ${mobileMenuOpen ? '✕' : '☰'}
+          </button>
 
-        <ul className=${`nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
-          <li><a href="#home" className="nav-link" onClick=${closeMenu}>Início</a></li>
-          <li><a href="#services" className="nav-link" onClick=${closeMenu}>Serviços</a></li>
-          <li><a href="#about" className="nav-link" onClick=${closeMenu}>Sobre</a></li>
-          <li><a href="#contact" className="nav-link" onClick=${closeMenu}>Contato</a></li>
-          <li>
-            <a href="https://wa.me/5531996140045" target="_blank" rel="noopener noreferrer" className="btn btn-primary consult-link" onClick=${closeMenu}>
-              Falar com Consultor
-            </a>
-          </li>
-        </ul>
-      </div>
-    </header>
+          <ul className=${ 'nav-menu ' + (mobileMenuOpen ? 'open' : '') }>
+            <li><a href="#home" className="nav-link" onClick=${closeMenu}>Início</a></li>
+            <li><a href="#services" className="nav-link" onClick=${closeMenu}>Serviços</a></li>
+            <li><a href="#about" className="nav-link" onClick=${closeMenu}>Sobre</a></li>
+            <li><a href="#contact" className="nav-link" onClick=${closeMenu}>Contato</a></li>
+            <li>
+              <a href="https://wa.me/5531996140045" target="_blank" rel="noopener noreferrer" className="btn btn-primary consult-link" onClick=${closeMenu}>
+                Falar com Consultor
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+    </div>
   `;
 }
