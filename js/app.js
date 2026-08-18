@@ -1,28 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { html } from './react-setup.js';
+import { html, useEffect, useState } from './react-setup.js';
 
 // Importa os componentes do site
 import Header from './components/Header.js';
 import Hero from './components/Hero.js';
 import Services from './components/Services.js';
+import Systems from './components/Systems.js';
 import About from './components/About.js';
 import Faq from './components/Faq.js';
 import Contact from './components/Contact.js';
 import Footer from './components/Footer.js';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(() => window.location.hash || '#home');
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const nextHash = window.location.hash || '#home';
+      setCurrentPage(nextHash);
+
+      if (nextHash === '#sistemas') {
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        }, 0);
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const isSystemsPage = currentPage === '#sistemas';
+
   return html`
     <div>
       <${Header} />
       <main>
-        <${Hero} />
-        <${Services} />
-        <${About} />
-        <${Faq} />
-        <${Contact} />
+        ${isSystemsPage ? html`
+          <${Systems} />
+        ` : html`
+          <${Hero} />
+          <${Services} />
+          <${About} />
+          <${Faq} />
+          <${Contact} />
+        `}
       </main>
-      <${Footer} />
+      ${!isSystemsPage ? html`<${Footer} />` : null}
       
       <!-- Botão Flutuante do WhatsApp -->
       <a href="https://wa.me/5531996140045" className="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">

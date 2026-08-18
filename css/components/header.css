@@ -2,3 +2,9 @@
   padding: 8px 20px;
   font-size: 0.9rem;
 }
+
+.btn-system {
+  padding: 11px 20px;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
